@@ -20,7 +20,7 @@ variable "tenant_id" {
 
 //
 //
-
+/*
 # Variable definitions for the mylb module
 
 variable "resource_group_name" {
@@ -92,4 +92,4 @@ variable "tags" {
   type        = map(string)
   description = "Tags to be applied to all resources created by the module"
 }
-
+*/
