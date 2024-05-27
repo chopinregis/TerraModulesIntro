@@ -17,3 +17,6 @@ variable "tenant_id" {
   type        = string
   description = "The Tenant ID for the Azure service principal"
 }
+
+//
+//
