@@ -24,3 +24,11 @@ variable "tenant_id" {
 variable "resource_group_name" {
   type        = string
 }
+
+variable "frontend_subnet_id" {
+  type = string
+}
+
+variable "lb_sku" {
+  type = string
+}
