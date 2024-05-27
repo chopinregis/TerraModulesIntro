@@ -11,10 +11,10 @@ module "mylb" {
   source                                 = "../.."
 //  resource_group_name                    = azurerm_resource_group.test.name
 //  type                                   = "private"
-//  frontend_subnet_id                     = module.network.vnet_subnets[0]
+  frontend_subnet_id                     = module.network.vnet_subnets[0]
 //  frontend_private_ip_address_allocation = "Static"
 //  frontend_private_ip_address            = "10.0.1.6"
-//  lb_sku                                 = "Standard"
+  lb_sku                                 = "Standard"
 //  location                               = var.location
 //  pip_sku                                = "Standard"
 //  name                                   = "lb-aztest"
