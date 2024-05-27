@@ -126,13 +126,14 @@ variable "lb_sku" {
 # ... (other variables)
 
 
-module "storage_account.mylb" {
-  source  = "..."  # Path to your module
-  # ... other arguments
+module "mylb" {
+  source  = "../modules/mylb"  # Updated path to the module
+  # ... other arguments for your mylb module
 
-  frontend_subnet_id = var.frontend_subnet_id
-  lb_sku             = var.lb_sku
+  frontend_subnet_id = var.frontend_subnet_id  # Pass from main.tf
+  lb_sku              = var.lb_sku              # Pass from main.tf
 }
+
 
 
 
