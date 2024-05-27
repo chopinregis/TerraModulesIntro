@@ -125,32 +125,6 @@ variable "lb_sku" {
 
 # ... (other variables)
 
-# Azure load balancer module
-data "azurerm_resource_group" "azlb" {
-  name = var.resource_group_name
-}
-
-# Create subnet regardless of frontend_subnet_name
-data "azurerm_subnet" "snet" {
-  count = 1
-  name                 = var.frontend_subnet_name
-  resource_group_name = data.azurerm_resource_group.azlb.name
-  virtual_network_name = var.frontend_vnet_name
-}
-
-locals {
-  data_subnet_id = data.azurerm_subnet.snet.id
-}
-
-# Create public IP based on var.type
-resource "azurerm_public_ip" "azlb" {
-  count = var.type == "public" ? 1 : 0
-
-  # ... other arguments for public IP
-
-  # Pass required variables to mylb module
-  depends_on = [azurerm_resource_group.test, data.azurerm_subnet.snet]
-}
 
 module "mylb" {
   source = "../.."
