@@ -9,35 +9,35 @@ resource "azurerm_resource_group" "test" {
 
 module "mylb" {
   source                                 = "../.."
-  resource_group_name                    = azurerm_resource_group.test.name
-  type                                   = "private"
-  frontend_subnet_id                     = module.network.vnet_subnets[0]
-  frontend_private_ip_address_allocation = "Static"
-  frontend_private_ip_address            = "10.0.1.6"
-  lb_sku                                 = "Standard"
-  location                               = var.location
-  pip_sku                                = "Standard"
-  name                                   = "lb-aztest"
-  pip_name                               = "pip-aztest"
+//  resource_group_name                    = azurerm_resource_group.test.name
+//  type                                   = "private"
+//  frontend_subnet_id                     = module.network.vnet_subnets[0]
+//  frontend_private_ip_address_allocation = "Static"
+//  frontend_private_ip_address            = "10.0.1.6"
+//  lb_sku                                 = "Standard"
+//  location                               = var.location
+//  pip_sku                                = "Standard"
+//  name                                   = "lb-aztest"
+//  pip_name                               = "pip-aztest"
 
-  remote_port = {
-    ssh = ["Tcp", "22"]
-  }
+//  remote_port = {
+//    ssh = ["Tcp", "22"]
+//  }
 
-  lb_port = {
-    http  = ["80", "Tcp", "80"]
-    https = ["443", "Tcp", "443"]
-  }
+//  lb_port = {
+//    http  = ["80", "Tcp", "80"]
+//    https = ["443", "Tcp", "443"]
+//  }
 
-  lb_probe = {
-    http  = ["Tcp", "80", ""]
-    http2 = ["Http", "1443", "/"]
-  }
+//  lb_probe = {
+//    http  = ["Tcp", "80", ""]
+//    http2 = ["Http", "1443", "/"]
+//  }
 
-  tags = {
-    cost-center = "12345"
-    source      = "terraform"
-  }
+//  tags = {
+//    cost-center = "12345"
+//    source      = "terraform"
+//  }
 
   depends_on = [azurerm_resource_group.test]
 }
