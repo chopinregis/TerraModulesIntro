@@ -127,7 +127,7 @@ variable "lb_sku" {
 
 
 module "mylb" {
-  source  = "../modules/mylb"  # Updated path to the module
+  source = "modules/mylb"  # Assuming modules directory is a subdirectory
   # ... other arguments for your mylb module
 
   frontend_subnet_id = var.frontend_subnet_id  # Pass from main.tf
