@@ -21,15 +21,6 @@ variable "tenant_id" {
 //
 //
 
-variable "resource_group_name" {
-  type        = string
-}
-
-variable "pip_sku" {
-  type        = string
-  description = "SKU for the Public IP"
-}
-
 # Variable definitions for the mylb module
 
 variable "resource_group_name" {
