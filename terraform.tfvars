@@ -1,5 +1,4 @@
-resource_group_name  = "azurerm_resource_group"
-resource_group_name                    = "example-rg"
+resource_group_name                    = "azurerm_resource_group"
 frontend_subnet_id                     = "subnet-123456"
 type                                   = "public"
 location                               = "East US"
