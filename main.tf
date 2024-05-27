@@ -126,17 +126,14 @@ variable "lb_sku" {
 # ... (other variables)
 
 
-module "mylb" {
-  source = "../.."
+module "storage_account.mylb" {
+  source  = "..."  # Path to your module
+  # ... other arguments
 
-  # ... other arguments for mylb module
-
-  frontend_subnet_id = data.azurerm_subnet.snet.id  # Pass from main.tf
-  lb_sku             = var.lb_sku                  # Pass from main.tf
-  # ... other inputs if needed
+  frontend_subnet_id = var.frontend_subnet_id
+  lb_sku             = var.lb_sku
 }
 
-# ... (rest of your code for backend pool, NAT rules, etc.)
 
 
 
