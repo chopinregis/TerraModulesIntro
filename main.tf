@@ -134,6 +134,11 @@ module "mylb" {
   lb_sku              = var.lb_sku              # Pass from main.tf
 }
 
+module "frontend" {
+  source = "./modules/frontend"
+
+  subnet_id = module.network.vnet_subnets[0]
+}
 
 
 
